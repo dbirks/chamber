@@ -1,4 +1,4 @@
-# Chamber (the `@polarislabs` fork)
+# Chamber <sup>(the `@polarislabs` fork)</sup>
 
 Features different from the upstream chamber:
   - Doesn't delete the descriptions from the Parameter Store when importing
