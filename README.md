@@ -25,7 +25,7 @@ If you have a functional go environment, you can install with:
 go install github.com/polarislabs/chamber/v2@latest
 ```
 
-[See the wiki for more installation options like Docker images, Linux packages, and precompiled binaries.](https://github.com/segmentio/chamber/wiki/Installation)
+[See the wiki for more installation options like Docker images, Linux packages, and precompiled binaries.](https://github.com/polarislabs/chamber/wiki/Installation)
 
 ## Authenticating
 

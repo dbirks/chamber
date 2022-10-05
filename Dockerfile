@@ -1,6 +1,6 @@
 FROM golang:1.13-alpine AS build
 
-WORKDIR /go/src/github.com/segmentio/chamber
+WORKDIR /go/src/github.com/polarislabs/chamber
 COPY . .
 
 ARG TARGETARCH
@@ -13,6 +13,6 @@ RUN make linux VERSION=${VERSION} TARGETARCH=${TARGETARCH}
 FROM scratch AS run
 
 COPY --from=build /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
-COPY --from=build /go/src/github.com/segmentio/chamber/chamber /chamber
+COPY --from=build /go/src/github.com/polarislabs/chamber/chamber /chamber
 
 ENTRYPOINT ["/chamber"]

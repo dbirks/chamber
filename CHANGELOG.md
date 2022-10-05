@@ -1,1 +1,1 @@
-See https://github.com/segmentio/chamber/releases
+See https://github.com/polarislabs/chamber/releases
