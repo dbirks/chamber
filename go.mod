@@ -1,4 +1,4 @@
-module github.com/dbirks/chamber/v2
+module github.com/polarislabs/chamber/v2
 
 require (
 	github.com/aws/aws-sdk-go v1.38.22
