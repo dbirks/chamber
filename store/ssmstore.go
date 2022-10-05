@@ -95,23 +95,14 @@ func (s *SSMStore) KMSKey() string {
 // Write writes a given value to a secret identified by id.  If the secret
 // already exists, then write a new version.
 func (s *SSMStore) Write(id SecretId, value string) error {
-	version := 1
-	// first read to get the current version
-	current, err := s.Read(id, -1)
-	if err != nil && err != ErrSecretNotFound {
-		return err
-	}
-	if err == nil {
-		version = current.Meta.Version + 1
-	}
+	var err error
 
 	putParameterInput := &ssm.PutParameterInput{
-		KeyId:       aws.String(s.KMSKey()),
-		Name:        aws.String(s.idToName(id)),
-		Type:        aws.String("SecureString"),
-		Value:       aws.String(value),
-		Overwrite:   aws.Bool(true),
-		Description: aws.String(strconv.Itoa(version)),
+		KeyId:     aws.String(s.KMSKey()),
+		Name:      aws.String(s.idToName(id)),
+		Type:      aws.String("SecureString"),
+		Value:     aws.String(value),
+		Overwrite: aws.Bool(true),
 	}
 
 	// This API call returns an empty struct
