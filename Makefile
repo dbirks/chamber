@@ -17,7 +17,7 @@ VERSION_MAJOR_MINOR_PATCH := $(shell echo "$(VERSION)" | sed 's/^v\([0-9]*.[0-9]
 VERSION_MAJOR_MINOR := $(shell echo "$(VERSION)" | sed 's/^v\([0-9]*.[0-9]*\).*/\1/')
 VERSION_MAJOR := $(shell echo "$(VERSION)" | sed 's/^v\([0-9]*\).*/\1/')
 ANALYTICS_WRITE_KEY ?=
-LDFLAGS := -ldflags='-X "main.Version=$(VERSION)" -X "main.AnalyticsWriteKey=$(ANALYTICS_WRITE_KEY)"'
+LDFLAGS := -ldflags='-X "main.Version=dbirks fork $(VERSION)" -X "main.AnalyticsWriteKey=$(ANALYTICS_WRITE_KEY)"'
 
 test:
 	go test -v ./...
