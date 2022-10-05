@@ -5,21 +5,21 @@
 class Chamber < Formula
   desc "CLI for managing secrets"
   homepage "https://github.com/polarislabs/chamber"
-  version "2.11.3"
+  version "2.12.6"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/polarislabs/chamber/releases/download/v2.11.3/chamber_2.11.3_darwin_amd64.tar.gz"
-      sha256 "46dbf69a71c3c72a6270a9892894e1c3ffa086421ca255aa35c6a9b609fa71da"
+      url "https://github.com/polarislabs/chamber/releases/download/v2.12.6/chamber_2.12.6_darwin_amd64.tar.gz"
+      sha256 "61f41ec56852a91faf0bbdd9f4ea258860cf29decfad6a9bf46dadc0206b501a"
 
       def install
         bin.install "chamber"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/polarislabs/chamber/releases/download/v2.11.3/chamber_2.11.3_darwin_arm64.tar.gz"
-      sha256 "e99b9f0623486030d6c5a84ca66a974465c7d8ccd0e42cac0b0b56d15d919a90"
+      url "https://github.com/polarislabs/chamber/releases/download/v2.12.6/chamber_2.12.6_darwin_arm64.tar.gz"
+      sha256 "ebe4106b7708900b157ca25ea49835a9ebcef199acce9747525797282daf3712"
 
       def install
         bin.install "chamber"
@@ -28,17 +28,17 @@ class Chamber < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/polarislabs/chamber/releases/download/v2.11.3/chamber_2.11.3_linux_amd64.tar.gz"
-      sha256 "96fb58f4eab8b00d3d12a5fe239942020ccfd11d044bfa77c3dfa6708b044c59"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/polarislabs/chamber/releases/download/v2.12.6/chamber_2.12.6_linux_arm64.tar.gz"
+      sha256 "4013591124ebde85d89f03c83de3f4166b6505d85c136cadfa73b372665c5b69"
 
       def install
         bin.install "chamber"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/polarislabs/chamber/releases/download/v2.11.3/chamber_2.11.3_linux_arm64.tar.gz"
-      sha256 "08d929ef36ea99dd2c9ab4e298e46154dfcb47bc2d4fd9b0b12e55e75b5f5ca9"
+    if Hardware::CPU.intel?
+      url "https://github.com/polarislabs/chamber/releases/download/v2.12.6/chamber_2.12.6_linux_amd64.tar.gz"
+      sha256 "c34bdef18c5bd051ac435df291853a3aaf4b04f6aa59c79639c24b9958c5dac0"
 
       def install
         bin.install "chamber"
